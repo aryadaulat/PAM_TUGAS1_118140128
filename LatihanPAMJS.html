@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Latihan PAM JavaScript</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="flex-container-column">
+		<table id="table" class="tabledata">
+			<thead>
+				<tr>
+					<th class="desaintd">No.</th>
+					<th class="desaintd">Nama</th>
+					<th class="desaintd">NIM</th>
+					<th class="desaintd">Nilai</th>
+					<th class="desaintd">Nilai Mutu</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+	<script>
+		const users = [
+			{
+				no: '1',
+				name: 'Boy',
+				nim: '123',
+				nilai: '60'
+			},
+			{
+				no: '2',
+				name: 'Aldi',
+				nim: '124',
+				nilai: '70'
+			},
+			{
+				no: '3',
+				name: 'Ade',
+				nim: '125',
+				nilai: '40'
+			},
+		];
+		let table = document.getElementById('table');
+		for (let data = 0; data < users.length; data++) {
+			if (Number(users[data].nilai) >= 80) {
+				users[data]["Nilaimutu"] = "A";
+			} else if (Number(users[data].nilai) >= 70) {
+				users[data]["Nilaimutu"] = "AB";
+			} else if (Number(users[data].nilai) >= 60) {
+				users[data]["Nilaimutu"] = "B";
+			} else if (Number(users[data].nilai) >= 50) {
+				users[data]["Nilaimutu"] = "BC";
+			} else if (Number(users[data].nilai) >= 40) {
+				users[data]["Nilaimutu"] = "C";
+			} else if (Number(users[data].nilai) >= 10) {
+				users[data]["Nilaimutu"] = "D";
+			} else {
+				users[data]["Nilaimutu"] = "E";
+			}
+		}
+
+
+		for (let user of users) {
+			let tr = document.createElement('tr');
+			let tambah = 0;
+			let td1 = document.createElement('td');
+			td1.textContent = user.no;
+			tr.appendChild(td1);
+
+			let td2 = document.createElement('td');
+			td2.textContent = user.name;
+			tr.appendChild(td2);
+
+			let td3 = document.createElement('td');
+			td3.textContent = user.nim;
+			tr.appendChild(td3);
+
+			let td4 = document.createElement('td');
+			td4.textContent = user.nilai;
+			tr.appendChild(td4);
+
+			let td5 = document.createElement('td');
+			td5.textContent = user.Nilaimutu;
+			tr.appendChild(td5);
+
+			table.appendChild(tr);
+		}
+	</script>
+
+	</html>

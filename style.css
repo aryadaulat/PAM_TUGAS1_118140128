@@ -45,13 +45,12 @@ td {
 }
 .desaintd{
 	text-align: left;
-	background-color:gray;
+	background-color:#80bbf0;
 }
 
 th {
   position: sticky;
   top: 0;
-  background: #fff;
   vertical-align: bottom;
 }
 
@@ -59,8 +58,11 @@ th:last-child,
 td:last-child {
   border-right-width: 0;
 }
-
+tr:nth-child(odd){
+	background-color: gray;
+}
 tr:last-child td {
   border-bottom-width: 0;
 }
+
 
